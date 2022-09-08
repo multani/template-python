@@ -2,7 +2,11 @@
   "extends": [
     "config:base"
   ],
+
   "ignorePaths": [
     "requirements.txt",
-  ]
+  ],
+
+  "automerge": true,
+  "dependencyDashboard": true,
 }

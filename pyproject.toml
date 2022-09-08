@@ -1,0 +1,61 @@
+[tool.poetry]
+name = "NAME"
+version = "0.0.1"
+description = ""
+authors = ["Jonathan Ballet <jon@multani.info>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+structlog = "^21.5.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.0.1"
+pytest-cov = "^3.0.0"
+pytest-black = "^0.3.12"
+black = "^22.1"
+isort = "^5.10.1"
+pytest-isort = "^3.0.0"
+mypy = "^0.942"
+pytest-mypy = "^0.9.1"
+pytest-flake8 = "^1.0.7"
+pytest-asyncio = "^0.18.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+# script = "NAME.cli:app"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+addopts = """
+--doctest-modules
+--isort
+--black
+--cov-branch
+--cov-report html
+--cov-report term
+--tb short
+--verbose
+--verbose
+--mypy
+
+--cov NAME
+"""
+#--mypy
+filterwarnings = [
+    "ignore:<class 'pytest_black.BlackItem'> is not using a cooperative constructor.*:pytest.PytestDeprecationWarning",
+    "ignore:.*argument to BlackItem is deprecated.*:pytest.PytestRemovedIn8Warning",
+    "ignore:BlackItem is an Item subclass.*:pytest.PytestWarning",
+]
+
+testpaths = [
+    "NAME",
+    "tests",
+]
+
+[tool.isort]
+profile = "black"
+use_parentheses = false
+force_single_line = true

@@ -8,7 +8,7 @@ poetry: .venv
 
 .venv: poetry.lock poetry.toml pyproject.toml
 	poetry install
-	touch .venv
+	@touch .venv
 
 .PHONY: format
 test: poetry

@@ -9,4 +9,6 @@
 
   "automerge": true,
   "dependencyDashboard": true,
+
+  "schedule": ["after 6am on monday"],
 }

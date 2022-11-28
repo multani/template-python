@@ -333,7 +333,7 @@ pytest = {version = ">=6.2", markers = "python_version >= \"3.10\""}
 
 [[package]]
 name = "structlog"
-version = "22.2.0"
+version = "22.3.0"
 description = "Structured Logging for Python"
 category = "main"
 optional = false
@@ -372,7 +372,7 @@ python-versions = ">=3.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "fa3f02155a4398f34d3b71115de41e4c0d117814c70bab1079b85b239d2c1479"
+content-hash = "0f8ec4eec0bd2767eb0886172f1ab1f86a779e1dcbb29c2ff0f8efa6624ff545"
 
 [metadata.files]
 attrs = [
@@ -571,8 +571,8 @@ pytest-mypy = [
     {file = "pytest_mypy-0.10.2-py3-none-any.whl", hash = "sha256:486a2b2ca1ebd15794b74f14e7b1bf550ecb23c670dc62df5b25ed98d5c47de4"},
 ]
 structlog = [
-    {file = "structlog-22.2.0-py3-none-any.whl", hash = "sha256:bb1aa189214c30372a8afaa592f9556756aeb690e1ad7eb34391d7b5fa0f09b2"},
-    {file = "structlog-22.2.0.tar.gz", hash = "sha256:4edfe1d9f15f8a4bf365a817f7182af5d610596c155434b7564bfe7d40c2753c"},
+    {file = "structlog-22.3.0-py3-none-any.whl", hash = "sha256:b403f344f902b220648fa9f286a23c0cc5439a5844d271fec40562dbadbc70ad"},
+    {file = "structlog-22.3.0.tar.gz", hash = "sha256:e7509391f215e4afb88b1b80fa3ea074be57a5a17d794bd436a5c949da023333"},
 ]
 toml = [
     {file = "toml-0.10.2-py2.py3-none-any.whl", hash = "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b"},

@@ -501,14 +501,14 @@ pytest = ">=5.0"
 
 [[package]]
 name = "pytest-mypy"
-version = "0.10.2"
+version = "0.10.3"
 description = "Mypy static type checker plugin for Pytest"
 category = "dev"
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "pytest-mypy-0.10.2.tar.gz", hash = "sha256:efc89a9f54976995a39b98fd3672ccf958d03de8463dad0261aecc166a308b96"},
-    {file = "pytest_mypy-0.10.2-py3-none-any.whl", hash = "sha256:486a2b2ca1ebd15794b74f14e7b1bf550ecb23c670dc62df5b25ed98d5c47de4"},
+    {file = "pytest-mypy-0.10.3.tar.gz", hash = "sha256:f8458f642323f13a2ca3e2e61509f7767966b527b4d8adccd5032c3e7b4fd3db"},
+    {file = "pytest_mypy-0.10.3-py3-none-any.whl", hash = "sha256:7638d0d3906848fc1810cb2f5cc7fceb4cc5c98524aafcac58f28620e3102053"},
 ]
 
 [package.dependencies]
@@ -577,4 +577,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "2e446e9125a9f6ad6bc376b8da06030d8e7d7ab8e60d1495396d18121fcbe495"
+content-hash = "d4b987bcf3ea8095b0f15c58c2bbe23c989ccaf682cf7f210e885b8950094696"

@@ -11,4 +11,22 @@
   "dependencyDashboard": true,
 
   "schedule": ["after 6am on monday"],
+
+  "regexManagers": [
+    {
+      "fileMatch": [".github/workflows/.*"],
+      "matchStrings": ["python-version: \"(?<currentValue>\\S+)\"\\n"],
+      "depNameTemplate": "python",
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker",
+    },
+
+    {
+      "fileMatch": ["^pyproject.toml$"],
+      "matchStrings": ["python = \"\\^(?<currentValue>\\S+)\"\\n"],
+      "depNameTemplate": "python",
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker",
+    },
+  ],
 }

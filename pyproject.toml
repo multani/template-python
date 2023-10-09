@@ -5,7 +5,7 @@ description = ""
 authors = ["Jonathan Ballet <jon@multani.info>"]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.12"
 structlog = "23.1.0"
 
 [tool.poetry.dev-dependencies]

@@ -6,7 +6,7 @@ authors = ["Jonathan Ballet <jon@multani.info>"]
 
 [tool.poetry.dependencies]
 python = "^3.12"
-structlog = "23.2.0"
+structlog = "23.3.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "7.4.4"

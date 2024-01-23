@@ -59,3 +59,6 @@ testpaths = [
 profile = "black"
 use_parentheses = false
 force_single_line = true
+
+[tool.mypy]
+packages = ["NAME"]

@@ -1,7 +1,7 @@
 DIRECTORIES = NAME tests
 
 
-all: format
+all: fmt
 
 .PHONY: poetry
 poetry: .venv
@@ -10,14 +10,19 @@ poetry: .venv
 	poetry install
 	@touch .venv
 
-.PHONY: format
+.PHONY: fmt
 test: poetry
 	poetry run pytest
 
-.PHONY: format
-format: poetry
+.PHONY: fmt format
+fmt format: poetry
 	@poetry run black $(DIRECTORIES)
 	@poetry run isort $(DIRECTORIES)
+
+.PHONY: check
+check: poetry
+	@poetry run ruff check
+	@poetry run mypy
 
 requirements.txt: poetry pyproject.toml poetry.lock
 	poetry -V

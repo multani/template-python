@@ -46,7 +46,7 @@ addopts = """
 #--mypy
 filterwarnings = [
     "ignore:<class 'pytest_black.BlackItem'> is not using a cooperative constructor.*:pytest.PytestDeprecationWarning",
-    "ignore:.*argument to BlackItem is deprecated.*:pytest.PytestRemovedIn8Warning",
+    "ignore:.*argument to BlackItem is deprecated.*:pytest.PytestRemovedIn9Warning",
     "ignore:BlackItem is an Item subclass.*:pytest.PytestWarning",
 ]
 

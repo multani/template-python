@@ -16,8 +16,7 @@ test: poetry
 
 .PHONY: fmt format
 fmt format: poetry
-	@poetry run black $(DIRECTORIES)
-	@poetry run isort $(DIRECTORIES)
+	@poetry run ruff format $(DIRECTORIES)
 
 .PHONY: check
 check: poetry

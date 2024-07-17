@@ -435,13 +435,13 @@ files = [
 
 [[package]]
 name = "structlog"
-version = "24.2.0"
+version = "24.3.0"
 description = "Structured Logging for Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "structlog-24.2.0-py3-none-any.whl", hash = "sha256:983bd49f70725c5e1e3867096c0c09665918936b3db27341b41d294283d7a48a"},
-    {file = "structlog-24.2.0.tar.gz", hash = "sha256:0e3fe74924a6d8857d3f612739efb94c72a7417d7c7c008d12276bca3b5bf13b"},
+    {file = "structlog-24.3.0-py3-none-any.whl", hash = "sha256:ee4c2c7ef7971201f89f85893a4470ecd03bbd97bb54d75581225fdb894689a4"},
+    {file = "structlog-24.3.0.tar.gz", hash = "sha256:bcf6b890cf8b48c35fa127ea79c155c79b9e6a4a826f4ce9dfc3bebd72f07fa8"},
 ]
 
 [package.extras]
@@ -475,4 +475,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "ffef3a6744d6a7e331e1fbe63590eb860ded8d0678b4506fd597c2a3bfa97790"
+content-hash = "ed1d4d2492cfec3d26424ed53e0d2e8c61c8ac4187655e3334cfb1897e5373bb"

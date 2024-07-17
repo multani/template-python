@@ -435,18 +435,18 @@ files = [
 
 [[package]]
 name = "structlog"
-version = "24.3.0"
+version = "24.4.0"
 description = "Structured Logging for Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "structlog-24.3.0-py3-none-any.whl", hash = "sha256:ee4c2c7ef7971201f89f85893a4470ecd03bbd97bb54d75581225fdb894689a4"},
-    {file = "structlog-24.3.0.tar.gz", hash = "sha256:bcf6b890cf8b48c35fa127ea79c155c79b9e6a4a826f4ce9dfc3bebd72f07fa8"},
+    {file = "structlog-24.4.0-py3-none-any.whl", hash = "sha256:597f61e80a91cc0749a9fd2a098ed76715a1c8a01f73e336b746504d1aad7610"},
+    {file = "structlog-24.4.0.tar.gz", hash = "sha256:b27bfecede327a6d2da5fbc96bd859f114ecc398a6389d664f62085ee7ae6fc4"},
 ]
 
 [package.extras]
 dev = ["freezegun (>=0.2.8)", "mypy (>=1.4)", "pretend", "pytest (>=6.0)", "pytest-asyncio (>=0.17)", "rich", "simplejson", "twisted"]
-docs = ["furo", "myst-parser", "sphinx", "sphinx-notfound-page", "sphinxcontrib-mermaid", "sphinxext-opengraph", "twisted"]
+docs = ["cogapp", "furo", "myst-parser", "sphinx", "sphinx-notfound-page", "sphinxcontrib-mermaid", "sphinxext-opengraph", "twisted"]
 tests = ["freezegun (>=0.2.8)", "pretend", "pytest (>=6.0)", "pytest-asyncio (>=0.17)", "simplejson"]
 typing = ["mypy (>=1.4)", "rich", "twisted"]
 
@@ -475,4 +475,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "ed1d4d2492cfec3d26424ed53e0d2e8c61c8ac4187655e3334cfb1897e5373bb"
+content-hash = "d313b939e18c9689130de2ddec5a72d9f5aec7c9513f4fa0752f63334ce70a79"

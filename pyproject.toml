@@ -12,8 +12,8 @@ structlog = "24.4.0"
 black = "24.4.2"
 isort = "5.13.2"
 mypy = "1.10.1"
-pytest = "8.0.2"
-pytest-asyncio = "0.23.5.post1"
+pytest = "8.2.2"
+pytest-asyncio = "0.23.7"
 pytest-black = "0.3.12"
 pytest-cov = "5.0.0"
 pytest-isort = "4.0.0"
@@ -46,7 +46,7 @@ addopts = """
 #--mypy
 filterwarnings = [
     "ignore:<class 'pytest_black.BlackItem'> is not using a cooperative constructor.*:pytest.PytestDeprecationWarning",
-    "ignore:.*argument to BlackItem is deprecated.*:pytest.PytestRemovedIn8Warning",
+    "ignore:.*argument to BlackItem is deprecated.*:pytest.PytestRemovedIn9Warning",
     "ignore:BlackItem is an Item subclass.*:pytest.PytestWarning",
 ]
 

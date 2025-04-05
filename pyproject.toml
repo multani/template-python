@@ -1,31 +1,35 @@
-[tool.poetry]
+[project]
 name = "NAME"
-version = "0.0.1"
-description = ""
-authors = ["Jonathan Ballet <jon@multani.info>"]
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Jonathan Ballet", email = "jon@multani.info" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "click==8.1.8",
+    "structlog==25.2.0",
+]
 
-[tool.poetry.dependencies]
-python = "^3.13"
-structlog = "24.4.0"
-
-[tool.poetry.group.dev.dependencies]
-mypy = "1.14.0"
-pytest = "8.3.4"
-pytest-asyncio = "0.25.0"
-pytest-cov = "6.0.0"
-pytest-mypy = "0.10.3"
-pytest-ruff = "0.4.1"
-ruff = "0.8.4"
+[project.scripts]
+my-script = "NAME.cli:main"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.poetry.scripts]
-# script = "NAME.cli:app"
+[dependency-groups]
+dev = [
+    "mypy==1.15.0",
+    "pytest==8.3.5",
+    "pytest-cov==6.1.1",
+    "pytest-mypy==1.0.1",
+    "pytest-ruff==0.4.1",
+    "ruff==0.11.4",
+]
 
 [tool.pytest.ini_options]
-asyncio_mode = "auto"
 addopts = """
 --cov NAME
 --cov-branch
@@ -39,14 +43,27 @@ addopts = """
 --verbose
 --mypy
 """
-#--mypy
-filterwarnings = [
-]
-
 testpaths = [
     "NAME",
     "tests",
 ]
 
 [tool.mypy]
-packages = ["NAME"]
+packages = [
+    "NAME",
+    "tests",
+]
+strict = true
+
+[tool.ruff.lint]
+ignore = [
+    # It's OK to have long line
+    "E501",
+]
+extend-select = [
+    # Sort imports
+    "I",
+]
+
+[tool.ruff.lint.isort]
+force-single-line = true

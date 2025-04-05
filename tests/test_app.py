@@ -1,4 +1,4 @@
-def test_1():
+def test_1() -> None:
     import NAME
 
     NAME

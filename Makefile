@@ -1,28 +1,24 @@
-DIRECTORIES = NAME tests
-
+DOCKER_IMAGE = local/NAME
 
 all: fmt
 
-.PHONY: poetry
-poetry: .venv
-
-.venv: poetry.lock poetry.toml pyproject.toml
-	poetry install
-	@touch .venv
-
 .PHONY: fmt
-test: poetry
-	poetry run pytest
-
-.PHONY: fmt format
-fmt format: poetry
-	@poetry run ruff format $(DIRECTORIES)
+fmt:
+	uv run ruff format
+	uv run ruff check --fix
 
 .PHONY: check
-check: poetry
-	@poetry run ruff check
-	@poetry run mypy
+check:
+	uv run pytest --mypy --ruff --ruff-format
 
-requirements.txt: poetry pyproject.toml poetry.lock
-	poetry -V
-	poetry export --format requirements.txt --output $@ --without-hashes
+.PHONY: test
+test:
+	uv run pytest
+
+.PHONY: mypy
+mypy:
+	uv run mypy
+
+.PHONY: docker
+docker:
+	docker build -t $(DOCKER_IMAGE) .

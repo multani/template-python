@@ -29,20 +29,20 @@ dev = [
     "ruff==0.14.10",
 ]
 
-[tool.pytest.ini_options]
-addopts = """
---cov NAME
---cov-branch
---cov-report html
---cov-report term
---doctest-modules
---ruff
---ruff-format
---tb short
---verbose
---verbose
---mypy
-"""
+[tool.pytest]
+addopts = [
+    "--cov=NAME",
+    "--cov-branch",
+    "--cov-report=html",
+    "--cov-report=term",
+    "--doctest-modules",
+    "--ruff",
+    "--ruff-format",
+    "--tb=short",
+    "--verbose",
+    "--verbose",
+    "--mypy",
+]
 testpaths = [
     "NAME",
     "tests",

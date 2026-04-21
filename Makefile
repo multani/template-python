@@ -9,15 +9,15 @@ fmt:
 
 .PHONY: check
 check:
-	uv run pytest --mypy --ruff --ruff-format
+	uv run pytest --ty --ruff --ruff-format
 
 .PHONY: test
 test:
 	uv run pytest
 
-.PHONY: mypy
-mypy:
-	uv run mypy
+.PHONY: ty
+ty:
+	uv run ty
 
 .PHONY: docker
 docker:

@@ -8,21 +8,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-    name: Build & Test Python
+    name: Test
 
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        uses: actions/checkout@v6.0.2
 
       - name: Install uv
-        uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
-
-      - name: Setup Python
-        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
-        with:
-          python-version-file: pyproject.toml
+        uses: astral-sh/setup-uv@v8.1.0
 
       - name: Build
         run: uv sync --all-extras --dev
@@ -32,11 +27,17 @@ jobs:
 
   docker:
     runs-on: ubuntu-latest
-    name: Test Docker build
+    name: Docker
 
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        uses: actions/checkout@v6.0.2
 
-      - name: Docker build
-        run: docker build .
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v4.0.0
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4.0.0
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v7.1.0

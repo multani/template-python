@@ -24,7 +24,7 @@ dev = [
     "pytest==9.0.3",
     "pytest-cov==7.1.0",
     "pytest-ruff==0.5",
-    "pytest-ty==0.2.0",
+    "pytest-ty==0.2.1",
     "ruff==0.15.11",
     "ty==0.0.32",
 ]

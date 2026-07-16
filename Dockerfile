@@ -8,7 +8,9 @@ ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy
 ENV UV_NO_DEV=1
 
 # Disable Python downloads, because we want to use the system interpreter
-# across both images.
+# across both images. If using a managed Python version, it needs to be
+# copied from the build image into the final image; see `standalone.Dockerfile`
+# for an example.
 ENV UV_PYTHON_DOWNLOADS=0
 
 WORKDIR /app
@@ -21,21 +23,27 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --locked
 
 
-# This should be the same image as the "builder" one.
+# Then, use a final image without uv
 FROM python:3.14-slim
-
-ENV PATH=/app/.venv/bin:$PATH \
-    PYTHONUNBUFFERED=1
+# It is important to use the image that matches the builder, as the path to the
+# Python executable must be the same, e.g., using `python:3.11-slim-bookworm`
+# will fail.
 
 # Setup a non-root user
 RUN groupadd --system --gid 999 nonroot \
  && useradd --system --gid 999 --uid 999 --create-home nonroot
 
-WORKDIR /app
-
 # Copy the application from the builder
 COPY --from=builder --chown=nonroot:nonroot /app /app
 
+# Place executables in the environment at the front of the path
+ENV PATH="/app/.venv/bin:$PATH"
+
+# Keeps Python from buffering stdout and stderr to avoid situations where
+# the application crashes without emitting any logs due to buffering.
+ENV PYTHONUNBUFFERED=1
+
+# Use the non-root user to run our application
 USER nonroot
 STOPSIGNAL SIGINT
 
@@ -47,4 +55,10 @@ ENV \
   GIT_SHA="${GIT_SHA}" \
   GIT_REF="${GIT_REF}"
 
+# Use `/app` as the working directory
+WORKDIR /app
+
 RUN ["my-script", "--help"]
+
+# Run the application by default
+CMD ["my-script"]

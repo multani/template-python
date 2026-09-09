@@ -1,6 +1,6 @@
 def test_1() -> None:
     import NAME
 
-    NAME
+    assert NAME is not None
 
     assert True

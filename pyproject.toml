@@ -25,7 +25,7 @@ dev = [
     "pytest-cov==7.1.0",
     "pytest-ruff==0.5",
     "pytest-ty==0.3.0",
-    "ruff==0.15.22",
+    "ruff==0.16.6",
     "ty==0.0.79",
 ]
 
@@ -59,6 +59,8 @@ strict = true
 ignore = [
     # It's OK to have long line
     "E501",
+    # TODO: remove when creating the template (prevent failing on the invalid "NAME" module name.)
+    "N999",
 ]
 extend-select = [
     # Sort imports

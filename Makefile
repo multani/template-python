@@ -17,10 +17,6 @@ test:
 
 .PHONY: ty
 ty:
-	uv run ty
-
-.PHONY: ty
-ty:
 	uv run ty check
 
 .PHONY: docker
